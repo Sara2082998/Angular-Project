@@ -1,0 +1,44 @@
+
+<div class="items-container  " >
+    <div class="item">
+        <div class="diamond-container">
+            <div class="diamond">
+                
+                <div class="diamond-wrapper">
+                    
+                    <div class="diamond-content">{{data.price}} L.E</div>
+                    
+                </div>
+                  
+       
+            </div>
+            
+        </div>
+        <div class="item-wrapper">
+            <div class="content-wrapper">
+                
+                <div class="img-container">
+                    
+                    <div class="bg-square"></div>
+                    <img class="item-img" src={{data.image}} style="width:300px ; height: 300px;" />
+                </div>
+
+                <div class="content-text">
+                    <div class="buttons">
+                        <button (click)="addButton=false"  *ngIf="addButton" class="btn btn-success " style="color:white ;">Add to cart</button>
+                    </div>
+                    <p style="text-align:center ; font-size:large">{{data.name}}</p>
+                    
+                    <div *ngIf="!addButton"  style="display:flex">
+                        <input type="number" class="form-control"  [(ngModel)]="amount" min="1" style="font-size:20px; text-align: center;">
+                        <button (click)="add();addButton=true" style="border-radius:2px;"><img src="../../../assets/Images/shop-icon.gif" style="width: 20px;"></button>
+                 </div> 
+                    
+                </div>
+                
+               
+                        <a routerLink="/productdetails/{{data.id}}"><i class="fa fa-eye" >Details</i></a>
+                
+            </div>
+            
+            

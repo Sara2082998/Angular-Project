@@ -1,0 +1,222 @@
+{
+    "Categeries":[
+       
+{
+    
+
+    "id":1,
+    "name":"male"
+
+
+},
+{ "id":2,
+    "name":"female"
+},
+{
+    "id":3,
+    "name":"kids"
+}
+
+
+    ]
+
+
+,
+    "Products":[
+
+
+        {
+            "id":1,
+            "name":"t-shirt sportee",
+            "description":"Men's short-sleeved fitted-cut crew neck cotton fitness t-shirt sportee - black",
+            "image":"../../../../assets/Images/men1.jpg",
+            "price":200,
+            "categoryId":"1"
+
+        },
+        {"id":2,
+        "name":" t-shirt sportee - white",
+        "description":"Men's short-sleeved fitted-cut crew neck cotton fitness t-shirt sportee - white",
+        "image":"../../../../assets/Images/me2.jpg",
+        "price":200,
+        "categoryId":"1"
+        
+
+        },
+        {
+            "id":3,
+            "name":"Men's Classic Solid Shirt ",
+            "description":"Men's Classic Solid Shirt",
+            "image":"../../../../assets/Images/men3.jpg",
+            "price":300,
+            "categoryId":"1"
+
+        },
+        {
+            "id":4,
+            "name":"Men's Classic Solid Shirt",
+            "description":"Men's Classic Solid Shirt",
+            "image":"../../../../assets/Images/men4.jpg",
+            "price":200,
+            "categoryId":"1"
+
+        },
+        
+      
+
+        {
+            "id":5,
+            "name":"Men's Classic Solid Shirt",
+            "description":"Men's Classic Solid Shirt",
+            "image":"../../../../assets/Images/men5.jpg",
+            "price":5000,
+            "categoryId":"1"
+
+        },
+        {
+            "id":6,
+            "name":"men suit",
+            "description":"Navy Cotton-Stretch Fashion Blazer 9010",
+            "image":"../../../../assets/Images/men6.jpg",
+            "price":3600,
+            "categoryId":"1"
+
+        },
+        {
+        "id":7,
+        "name":"man suits",
+        "description":"fast shipment variety color men slim fit formal business vest wedding man suits",
+        "image":"../../../../assets/Images/men7.jpg",
+        "price":6000,
+        "categoryId":"1"
+        },
+        { "id":8,
+        "name":"Winter Military",
+        "description":"Winter Military Fleece Jacket Warm Men Tactical Jacket Thermal Breathable Hooded Men Jackets And Coat Outerwear Clothes",
+        "image":"../../../../assets/Images/men8.jpg",
+        "price":1000,
+        "categoryId":"1"
+
+        },
+        {
+            "id":9,
+            "name":"Molo's Bera skirt",
+            "description":"Molo's Bera skirt will make for a charming addition to your little one's autumnal wardrobe. It's made from rust-brown stretch-cotton corduroy and has golden buttons running down the front",
+            "image":"../../../../assets/Images/k1.jpg",
+            "price":200,
+            "categoryId":"3"
+        },
+        {
+            "id":10,
+            "name":"Hooded padded gile ",
+            "description":"Hooded padded gilet ",
+            "image":"../../../../assets/Images/k8.jpg",
+            "price":300,
+            "categoryId":"3"
+        },
+        {
+            "id":11,
+            "name":"Hooded padded gile ",
+            "description":"Hooded padded gilet ",
+            "image":"../../../../assets/Images/k7.jpg",
+            "price":300,
+            "categoryId":"3"
+        },
+        {
+            "id":12,
+            "name":"Hooded padded gile ",
+            "description":"Hooded padded gilet ",
+            "image":"../../../../assets/Images/k6.jpg",
+            "price":300,
+            "categoryId":"3"
+        },
+        {
+            "id":13,
+            "name":"Hooded padded gile ",
+            "description":"Hooded padded gilet ",
+            "image":"../../../../assets/Images/k4.jpg",
+            "price":1000,
+            "categoryId":"3"
+        },
+        {
+            "id":14,
+            "name":"Milton Kids Boys  ",
+            "description":"Milton Kids Boys Plain Yellow - Mint Green",
+            "image":"../../../../assets/Images/k5.jpg",
+            "price":900,
+            "categoryId":"3"
+        },
+        {
+            "id":15,
+            "name":"Dalydress",
+            "description":"Dalydress womens Dalydress, Women, Blouse, Dalydress Women Blouse Blouse (pack of 1)",
+            "image":"../../../../assets/Images/fe14.jpg",
+            "price":600,
+            "categoryId":"2"
+        },
+        {
+            "id":16,
+            "name":"greenfabric",
+            "description":"Brand : Pinky Color Mint GreenFabric Type Cotton Dress Style LayeredSize Medium Targeted Group GirlsOccasion Casual",
+            "image":"../../../../assets/Images/fe7.jpg",
+            "price":300,
+            "categoryId":"2"
+        },
+        {
+            "id":17,
+            "name":" Pinky Fabric",
+            "description":"Brand: Pinky Fabric Type: CottonDress Style: Layered Size: Large",
+            "image":"../../../../assets/Images/fe8.jpg",
+            "price":400,
+            "categoryId":"2"
+        },
+        {
+            "id":18,
+            "name":"Women's Stretchy",
+            "description":"Women's Stretchy Waist Slip On Pant - Black - Crepe",
+            "image":"../../../../assets/Images/fe9.jpg",
+            "price":500,
+            "categoryId":"2"
+        },
+        {
+            "id":19,
+            "name":"black t-shirt",
+            "description":"Carina womens Long Sleeve Classic Fit Shirt Shirt",
+            "image":"../../../../assets/Images/fe10.jpg",
+            "price":400,
+            "categoryId":"2"
+        },
+        {
+            "id":20,
+            "name":"wommen pantalo",
+            "description":"Boohoo Mocha Palazzo Trousers Pant For Women",
+            "image":"../../../../assets/Images/fe11.jpg",
+            "price":200,
+            "categoryId":"2"
+        },
+        {
+            "id":21,
+            "name":"Pinky High Rise",
+            "description":"Pinky High Rise wide Leg Linen Pants For Women",
+            "image":"../../../../assets/Images/fe12.jpg",
+            "price":400,
+            "categoryId":"2"
+        },
+        {
+            "id":22,
+            "name":"scarf",
+            "description":"Pashmina Shawls and Wraps Large Scarfs for Women Wedding Party Bridal Long Fashion Solid Shawl Wrap with Fringes",
+            "image":"../../../../assets/Images/fe13.jpg",
+            "price":200,
+            "categoryId":"2"
+        }
+
+
+    ],
+
+    
+  "cart": [
+    {}
+  ]
+
+}

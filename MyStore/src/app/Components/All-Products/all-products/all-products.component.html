@@ -1,0 +1,122 @@
+
+
+
+<!-- <div class="text-center w-500" *ngIf="Loading">
+  <app-loading></app-loading>
+</div>
+<div class="container">
+
+<div class="product-card " *ngFor="let product of allproducts">
+    <div class="badge">Hot</div>
+    <div class="product-tumb">
+      <img [src]="product.image" alt="" style="width:220px ; height: 300px;">
+    </div>
+    <div class="product-details">
+      <span class="product-catagory">{{product.name}}</span>
+      <h4><a href="">Women leather bag</a></h4>
+     
+      <div class="product-bottom-details">
+        <div class="product-price"><small>$96.00</small>$230.99</div>
+        <div class="product-links">
+          <a href=""><i class="fa fa-heart"></i></a>
+          <a href=""><i class="fa fa-shopping-cart"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="content-text">
+    <div class="buttons">
+        <button (click)="addButton=false"  *ngIf="addButton" class="btn btn-success " style="color:white ;">Add to cart</button>
+    </div>
+    <p style="text-align:center ; font-size:large">{{product.name}}</p>
+    
+    <div *ngIf="!addButton"  style="display:flex">
+        <input type="number" class="form-control"  [(ngModel)]="amount" min="1" style="font-size:20px; text-align: center;">
+        <button (click)="add();addButton=true" style="border-radius:2px;"><img src="../../../assets/Images/shop-icon.gif" style="width: 20px;"></button>
+ </div> 
+    
+</div>
+</div> -->
+<section>
+  <div class="rt-container">
+    <div class="col-rt-12">
+<!-- Slider -->
+        <div id="slider">
+          <div class="slides">
+            <div class="slider">
+              <div class="image"> <img src="../../../assets/Images/slider1.jpg"> </div>
+            </div>
+            <div class="slider">
+              <div class="image"> <img src="../../../assets/Images/slider4.jpg"> </div>
+            </div>
+           
+            <div class="slider">
+              <div class="image"> <img src="../../../assets/Images/slid.jpg"> </div>
+            </div>
+            <div class="slider">
+              <div class="image"> <img src="../../../assets/Images/slider1.jpg"> </div>
+            </div>
+          </div>
+          <div class="switch">
+            <ul>
+              <li>
+                <div class="on"></div>
+              </li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+       </div>
+ </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<select class="form-control w-25  m-4 align-content-center" name="cat" id="prdCat" #selected
+(change)="getAllProductById(selected.value)">
+<option value="0" selected>All</option>
+<option *ngFor="let cat of allCategory" [value]="cat.id">
+  {{ cat.name }}
+</option>
+</select>
+
+<div class="container">
+
+  <div class="px-4 px-lg-5 mt-5">
+
+  <div class="row"  *ngIf="!Loading">
+
+  <div class="col-4 justify-content-center" *ngFor="let product of allproducts">
+
+  <app-card-component [data]="product" (item)="addToCard($event)"></app-card-component>
+
+  </div>
+
+  </div>
+</div>
+
+
+<div class="text-center w-500" *ngIf="Loading">
+
+</div>
+</div>
+
+

@@ -1,0 +1,173 @@
+<section class="h-100 h-custom" style=" position:static; margin-bottom: 100px;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card">
+            <div class="card-body p-4">
+  
+              <div class="row">
+  
+                <div class="col-lg-7">
+                  <h5 class="mb-3"><a href="#!" class="text-body"><i class="fas fa-long-arrow-alt-left me-2"></i>Continue
+                      shopping</a></h5>
+                  <hr>
+  
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                      <p class="mb-1">Shopping cart</p>
+                      <p class="mb-0">You have {{CardProducts.length}} items in Your Card</p>
+                    </div>
+                    <div>
+                      <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">price <i
+                            class="fas fa-angle-down mt-1"></i></a></p>
+                    </div>
+                  </div>
+  
+                  <div class="card mb-3" *ngFor="let pro of CardProducts;let index=index">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                          <div>
+                            <img [src]="pro.item.image" style="width:50px ; height: 50px;">
+  
+                          </div>
+                          <div class="ms-3">
+                            <h5>{{pro.item.describtion}}</h5>
+                            <p class="small mb-0">{{pro.item.name}}</p>
+                          </div>
+                        </div>
+                        <div class="" style="display: flex; justify-content: center;">
+                          
+                          <input class="form-control w-25" type="number" [(ngModel)]="pro.quantity" min="1" (ngModelChange)="DetectChange()" >
+                          
+                        </div>
+                        <div class="d-flex flex-row align-items-center">
+                          <div style="width: 50px;">
+                            <h5 class="fw-normal mb-0"> {{pro.item.price}}</h5>
+                          </div>
+                          <div style="width: 80px;">
+                            <h5 class="mb-0">{{pro.item.price * pro.quantity}} L.E </h5>
+                          </div>
+                          <button class="btn btn-danger" (click)="deleteProduct(index)">Detete <i class="fa fa-trash-o"
+                              aria-hidden="true"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+  
+  
+  
+  
+  
+  
+  
+                </div>
+                <div class="col-lg-5">
+  
+                  <div class="card bg-white text-white rounded-3">
+                    <div class="card-body">
+  
+                      <div>Card Details</div>
+  
+  
+  
+                      <form [formGroup]="registerForm" class="border p-3 shadow  mb-5 bg-white rounded">
+  
+                        <div class="row g-0">
+                          <div class="col text-center p-2 mb-3 ">
+                            <span class="fs-3" style="color:black">Enter your data</span>
+                          </div>
+  
+                          <div class="row">
+  
+                            <div class="col-12">
+                              <label for="fullname" class="form-lable">Full Name</label>
+                              <input formControlName="fullname" type="text" class="form-control" id="firstname" />
+                              <div class="form-text text-danger"
+                                *ngIf="FullName.errors?.['required'] && (FullName.touched || FullName.dirty) ">
+                                FullName is Required
+                              </div>
+                              <div class="form-text text-danger"
+                                *ngIf="FullName.errors?.['minlength']&& (FullName.touched || FullName.dirty)">
+                                FullName Is Too Short
+                              </div>
+                              <div class="form-text text-danger"
+                                *ngIf="FullName.errors?.['pattern'] && (FullName.touched || FullName.dirty)">
+                                FullName shoud not Contain Numbers
+                              </div>
+                            </div>
+  
+  
+                            <div class="col-12">
+                              <p></p>
+                              <label for="address" class="form-lable">Address</label>
+                              <input formControlName="address" type="text" class="form-control" id="Address" />
+                              <div class="form-text text-danger"
+                                *ngIf="Address.errors?.['required'] && (Address.touched || Address.dirty) ">
+                                Address is Required
+                              </div>
+                              <div class="form-text text-danger"
+                                *ngIf="Address.errors?.['minlength']&& (Address.touched || Address.dirty)">
+                                Address Is Too Short
+                              </div>
+                            </div>
+  
+  
+  
+                            <div class="col-12">
+                              <label for="creditcardnumber" class="form-lable">Credit Card Number</label>
+                              <input formControlName="creditcardnumber" type="text" class="form-control"
+                                id="CreditCardNumber" />
+                              <div class="form-text text-danger"
+                                *ngIf="CreditCardNumber.errors?.['required'] && (CreditCardNumber.touched || CreditCardNumber.dirty) ">
+                                Credit Card Number is Required
+                              </div>
+                              <div class="form-text text-danger"
+                                *ngIf="CreditCardNumber.errors?.['pattern'] && (CreditCardNumber.touched || CreditCardNumber.dirty)">
+                                Credit Card Number must 16 digit numbers
+                              </div>
+  
+                            </div>
+  
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-6 offset-3">
+                            <div class="d-grid">
+                              <button *ngIf="CardProducts.length>0" routerLink="/success" type="submit"
+                                class="btn btn-success m-2" [disabled]="registerForm.invalid">Buy Now</button>
+                            </div>
+                          </div>
+                        </div>
+  
+                      </form>
+  
+  
+                      <hr class="my-4">
+  
+                      <div class="d-flex justify-content-between">
+  
+                      </div>
+  
+  
+                      <button type="button" class="btn btn-info btn-block btn-lg">
+                        <div class="d-flex justify-content-between">
+                          <span>Total Card Price : {{CardTotalPrice}} L.E</span>
+  
+                        </div>
+                      </button>
+  
+                    </div>
+                    <div>{{CardProducts.length}} items</div>
+                  </div>
+  
+                </div>
+  
+              </div>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

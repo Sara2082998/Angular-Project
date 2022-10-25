@@ -7,7 +7,7 @@ import { ShoppingCardComponent } from './Components/Shopping/shopping-card/shopp
 import { SuccessComponent } from './Components/Success/success/success.component';
 
 const routes: Routes = [
- 
+ {path:"" ,component:AllProductsComponent},
   {path:"Products" , component:AllProductsComponent},
   {path:"productdetails/:id",component:ProductDetailsComponent},
   {path:"shopping" ,component:ShoppingCardComponent},

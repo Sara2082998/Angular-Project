@@ -12,10 +12,10 @@ Table of Contents
 General Info
 This project is a simple e-commerce project for selling furniture online.
 This project contains a group of product sections, including:
-1.	chairs
-2.	lighting
-3.	mirrors
-4.	Tables
+1.	men clothes
+2.	wommen colthes
+3.	kis clothes
+
 This allows the user to choose the product and quantity He puts it in his cart and after he finishes the purchase he will go to his cart and let him make some adjustments to his products before sending the data to the server
 
 Technologies

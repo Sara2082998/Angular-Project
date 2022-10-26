@@ -36,5 +36,6 @@ and Allows the user to see the products of each category
 
 2-(Shoppingservices) contain functionalities like getAllCardProducts() this function return the products added by the user,
 deleteProductFromCart() this function allow the user to delete any product from his card
-/*******************************/
+/******************************/
+
 

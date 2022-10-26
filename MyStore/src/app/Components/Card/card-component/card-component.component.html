@@ -1,44 +1,34 @@
 
-<div class="items-container  " >
-    <div class="item">
-        <div class="diamond-container">
-            <div class="diamond">
+<div class="con">
 
-                <div class="diamond-wrapper">
+  <div class="card">
 
-                    <div class="diamond-content">{{data.price}} L.E</div>
+      <div class="top-div">
+          <div class="border">
+          <img src={{data.image}} routerLink="/productdetails/{{data.id}}">
+          </div>
+          <span>{{data.price}} L.E</span>
+      </div>
+      <div class="bottom-div">
+          <h5>{{data.name}}</h5>
 
-                </div>
+      </div>
+      <div class="last-section">
 
+          <div class="buttons">
+              <button (click)="addButton=false"  *ngIf="addButton">Add to cart</button>
+          </div>
 
-            </div>
+          <div *ngIf="!addButton"  style="display:flex">
+            <input type="number" onkeydown="if(event.key==='.'){event.preventDefault();}" onpaste="let pasteData = event.clipboardData.getData('text'); if(pasteData){pasteData.replace(/[^0-9]*/g,'');} " >
 
-        </div>
-        <div class="item-wrapper">
-            <div class="content-wrapper">
-
-                <div class="img-container">
-
-                    <div class="bg-square"></div>
-                    <img class="item-img" src={{data.image}} style="width:300px ; height: 300px;" />
-                </div>
-
-                <div class="content-text">
-                    <div class="buttons">
-                        <button (click)="addButton=false"  *ngIf="addButton" class="btn btn-success " style="color:white ;">Add to cart</button>
-                    </div>
-                    <p style="text-align:center ; font-size:large">{{data.name}}</p>
-
-                    <div *ngIf="!addButton"  style="display:flex">
-                      <input type="number" onkeydown="if(event.key==='.'){event.preventDefault();}" onpaste="let pasteData = event.clipboardData.getData('text'); if(pasteData){pasteData.replace(/[^0-9]*/g,'');} "   [(ngModel)]="amount" min="1" style="font-size:20px; text-align: center;">
-                        <button (click)="add();addButton=true" style="border-radius:2px;"><img src="../../../assets/Images/shop-icon.gif" style="width: 20px;"></button>
-                 </div>
-
-                </div>
-
-
-                        <a routerLink="/productdetails/{{data.id}}"><i class="fa fa-eye" >Details</i></a>
-
-            </div>
+              <button (click)="add();addButton=true" style="border-radius:2px;"><img src="../../../../assets/Images/shop-icon.gif" style="width: 20px;"></button>
+       </div>
+       <div class="heart">
+        <a routerLink="/productdetails/{{data.id}}"><i class="fa fa-eye" aria-hidden="true">Details</i></a>
+         </div>
+      </div>
+  </div>
+</div>
 
 

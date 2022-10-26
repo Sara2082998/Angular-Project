@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class ProductServicesService {
 
   constructor(private http:HttpClient) { }
-  
+
   ProductsUrl="http://localhost:3000/Products"
   CategoriesUrl="http://localhost:3000/Categeries"
   CategorytsUrl="http://localhost:3000/Products?categoryId"
@@ -21,15 +21,18 @@ export class ProductServicesService {
     return this.http.get(this.CategoriesUrl)
  }
 
- GetAllProductsByCategoryId(Categoryid:any)
+ GetAllProductsByCatId(Categoryid:any)
  {
-  
+   //return this.http.get(this.CategorytsUrl)
    return this.http.get(`${this.CategorytsUrl}=${Categoryid}`)
  }
 
- GetProductByproductId(ProductId:any)
+ GetProductById(ProductId:any)
  {
    return this.http.get(`${this.ProductsUrl}/${ProductId}`)
  }
 
+
+
 }
+

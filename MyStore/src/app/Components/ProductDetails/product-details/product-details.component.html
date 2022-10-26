@@ -1,66 +1,50 @@
-<div id="container">
 
-  <!-- Start	Product details -->
-    <div class="product-details">
-
-      <!-- 	Product Name -->
-    <h1>{{product.name}}</h1>
-  <!-- 		<span class="hint new">New</span> -->
-  <!-- 		<span class="hint free-shipping">Free Shipping</span> -->
-  <!-- 		the Product rating -->
-    <span class="hint-star star">
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star" aria-hidden="true"></i>
-      <i class="fa fa-star-half-o" aria-hidden="true"></i>
-      <i class="fa fa-star-o" aria-hidden="true"></i>
-    </span>
+<div class=" row container  px-4 px-lg-5 mt-5">
 
 
-  <!-- The most important information about the product -->
-      <p class="information">{{product.description}}</p>
+  <div style=" margin-left: 300px;margin-top: 50px;margin-bottom: 100px">
+
+
+      <div class="product">
+      <div class="product-img">
+          <img src={{product.image}}>
+          <span class="tag">new</span>
+      </div>
+      <div class="product-listing">
+          <div class="content">
+              <h1 class="name">{{product.name}}</h1>
+              <p class="info">Product Details :<br>{{product.Description}}</p>
+              <h4>Price: {{product.price}} L.E</h4>
+              <div class="btn-and-rating-box mt-2">
+                  <div class="rating">
+                      <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true" alt="">
+                      <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true" alt="">
+                      <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true" alt="">
+                      <img src="https://github.com/kunaal438/product-page/blob/master/img/star.png?raw=true" alt="">
+                      <img src="https://github.com/kunaal438/product-page/blob/master/img/star%20stroke.png?raw=true" alt="">
+                  </div>
+              </div>
 
 
 
-  <!-- 		Control -->
-  <div class="control">
+              <div class="buttons mt-3">
+                <button  class="btn btn-outline-info" (click)="addButton=false"  *ngIf="addButton">Add to cart</button>
+            </div>
 
-  <!-- Start Button buying -->
-  <div class="product-price-btn">
+            <div *ngIf="!addButton"  class="mt-2" style="display:flex">
+              <input type="number" onkeydown="if(event.key==='.'){event.preventDefault();}" onpaste="let pasteData = event.clipboardData.getData('text'); if(pasteData){pasteData.replace(/[^0-9]*/g,'');} " >
 
-  <button  class="btn btn-success" (click)="addButton=false"  *ngIf="addButton" style="width:120px ; height:50px">Add to cart</button>
-  <div *ngIf="!addButton"  class="mt-2" style="display:flex ;padding: 10px;" >
-    <input type="number" onkeydown="if(event.key==='.'){event.preventDefault();}" onpaste="let pasteData = event.clipboardData.getData('text'); if(pasteData){pasteData.replace(/[^0-9]*/g,'');} "  class="form-control"  [(ngModel)]="amount" min="1" style="font-size:30px; text-align: center;">
-      <button (click)="add();addButton=true" style="border-radius:2px;"><img src="../../../assets/Images/shop-icon.gif" style="width: 40px;"></button>
-</div>
-</div>
+                <button (click)="add();addButton=true" style="border-radius:2px;"><img src="../../../../assets/Images/shop-icon.gif" style="width: 40px;"></button>
+         </div>
 
+
+          </div>
+      </div>
+  </div>
+  <button class="btn btn-success" routerLink="/Products"><i class='far fa-arrow-alt-circle-left' style='font-size:24px'></i>Go To List</button>
   </div>
 
-  </div>
-
-  <!-- 	End	Product details   -->
 
 
 
-  <!-- 	Start product image & Information -->
 
-  <div class="product-image">
-
-    <img [src]="product.image" >
-
-  <!-- 	product Information-->
-  <div class="info">
-    <h2>The Description</h2>
-    <ul>
-      <li><strong>name: </strong>{{product.name}}</li>
-      <li><strong>Description:</strong>{{product.description}}</li>
-      <li><strong>Price </strong>{{product.price}}</li>
-
-    </ul>
-  </div>
-  </div>
-  <!--  End product image  -->
-
-
-  </div>

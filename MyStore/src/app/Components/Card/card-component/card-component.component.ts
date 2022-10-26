@@ -10,11 +10,13 @@ export class CardComponentComponent implements OnInit {
   @Output() public item=new EventEmitter()
   addButton:boolean=true
   amount:number=1
-  constructor() { }
 
+  constructor() { }
   ngOnInit(): void {
   }
-  add()
+
+
+add()
 {
   if(this.amount<1){
     this.amount=1

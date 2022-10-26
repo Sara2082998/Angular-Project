@@ -18,7 +18,7 @@ amount:any=1
   }
 
   ngOnInit(): void {
-    this.productservices.GetProductByproductId(this.ProductId).subscribe(
+    this.productservices.GetProductById(this.ProductId).subscribe(
        (data)=>{this.product=data},
        (error)=>{console.log(error)}
     )
@@ -56,5 +56,10 @@ event:any
       }
       console.log(this.event)
   }
+
+
+
+
+
 
 }

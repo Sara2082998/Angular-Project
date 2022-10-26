@@ -7,92 +7,109 @@ import { ProductServicesService } from 'src/app/Services/ProductServices/product
 })
 export class AllProductsComponent implements OnInit {
 
-  constructor(private productserve:ProductServicesService) { }
- allproducts:any
- Loading:boolean=false
- allCategory:any
+  AllProducts:any
+  AllCategories:any
+  selectedCatID:any
+  Loading:boolean=false
+  AllID:any
+    constructor(private productervices:ProductServicesService) { }
 
-  ngOnInit(): void {
-this.GetAllProducts()
-this.getAllCategories()
-  }
-GetAllProducts()
-{
-  this.Loading=true
- return this.productserve.GetAllProducts().subscribe((data)=>{
-    this.allproducts=data
-  
-    this.Loading=false     },
-    (error)=> {alert(error)
-      this.Loading=true }
-    )
-    ;
-}
-getAllCategories()
-{
-  this.productserve.GetAllCategories().subscribe(
-    (data) => {this.allCategory = data},
-    (error)=> {alert(error)}
-    )
- console.log(this.allCategory)
-}
-getAllProductById(id:any)
-{
+    ngOnInit(): void {
 
+       this.getAllCategories()
+        this.getAll()
 
-  if(id==0)
-  { this.Loading=true
-    return this.productserve.GetAllProducts().subscribe(
-      (data) => {this.allproducts = data
-        this.Loading=false},
-      (error)=> {alert(error)
-        this.Loading=true}
-      )
-      ;
-  }
-  else{
-    this.Loading=true
-  return this.productserve.GetAllProductsByCategoryId(id).subscribe(
-
-    (data) => {this.allproducts = data
-      this.Loading=false}
-    ,
-    (error)=> {alert(error)
-      this.Loading=true}
-
-    )
-    ;
-  }
-}
+    }
 
 
 
-CardProducts:any=[]
-  addToCard(event:any)
+
+  getAllCategories()
   {
-      if("card" in localStorage)
-      {
-         this.CardProducts=JSON.parse(localStorage.getItem("card")!)
+    this.productervices.GetAllCategories().subscribe(
+      (data) => {this.AllCategories = data},
+      (error)=> {alert(error)}
+      )
 
-          let found=this.CardProducts.find( (item: { id: any; item:any }) => item.item.id==event.item.id)
-           if(found)
-           {
-            alert("this Product already in Card ")
-           }
-           else{
+  }
 
-             this.CardProducts.push(event)
-             localStorage.setItem("card",JSON.stringify(this.CardProducts))
-             alert("this Product Successfuly Added To Your Cart")
-           }
+
+    getAll()
+    {
+
+    this.Loading=true
+      return this.productervices.GetAllProducts().subscribe(
+        (data) => {this.AllProducts = data
+                   this.Loading=false     },
+        (error)=> {alert(error)
+          this.Loading=true }
+        )
+        ;
+    }
+    getCategoryById(id:any)
+    {
+
+
+      if(id==0)
+      { this.Loading=true
+        return this.productervices.GetAllProducts().subscribe(
+          (data) => {this.AllProducts = data
+            this.Loading=false},
+          (error)=> {alert(error)
+            this.Loading=true}
+          )
+          ;
       }
       else{
-        this.CardProducts.push(event)
-        localStorage.setItem("card",JSON.stringify(this.CardProducts))
-        alert("this Product Successfuly Added To Your Cart")
+        this.Loading=true
+      return this.productervices.GetAllProductsByCatId(id).subscribe(
 
+        (data) => {this.AllProducts = data
+          this.Loading=false}
+        ,
+        (error)=> {alert(error)
+          this.Loading=true}
+        )
+        ;
       }
-      console.log(event)
-  }
+    }
 
-}
+
+
+
+
+
+
+  CardProducts:any=[]
+    addToCard(event:any)
+    {
+        if("card" in localStorage)
+        {
+           this.CardProducts=JSON.parse(localStorage.getItem("card")!)
+
+            let found=this.CardProducts.find( (item: { id: any; item:any }) => item.item.id==event.item.id)
+             if(found)
+             {
+              alert("this Product already in Card ")
+             }
+             else{
+
+               this.CardProducts.push(event)
+               localStorage.setItem("card",JSON.stringify(this.CardProducts))
+               alert("this Product Successfuly Added To Your Cart")
+             }
+        }
+        else{
+          this.CardProducts.push(event)
+          localStorage.setItem("card",JSON.stringify(this.CardProducts))
+          alert("this Product Successfuly Added To Your Cart")
+
+        }
+        console.log(event)
+    }
+
+
+
+
+
+  }

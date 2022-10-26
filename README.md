@@ -27,7 +27,7 @@ Setup
 To run this project, install it locally using npm:
 
 ⦁	npm install
-⦁	MyStore>json-server --w Database/db.json (to watch Database)
+⦁	MyStore/Database>json-server --w db.json (to watch Database)
 ⦁	MyStore>ng serve -o (to run the App)
 
 Functionalities

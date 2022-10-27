@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductServicesService } from 'src/app/Services/ProductServices/product-services.service';
+import { Iproduct } from 'src/app/Models/iproduct';
 
 @Component({
   selector: 'app-product-details',
@@ -13,8 +14,9 @@ export class ProductDetailsComponent implements OnInit {
   product:any
 addButton:boolean=true
 amount:any=1
-  constructor(private activated:ActivatedRoute,private productservices:ProductServicesService) {
+  constructor(private activated:ActivatedRoute,private productservices:ProductServicesService )  {
     this.ProductId=activated.snapshot.params["id"];
+
   }
 
   ngOnInit(): void {

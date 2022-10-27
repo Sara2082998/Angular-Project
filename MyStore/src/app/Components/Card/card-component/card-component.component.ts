@@ -9,7 +9,7 @@ export class CardComponentComponent implements OnInit {
   @Input() data:any={}
   @Output() public item=new EventEmitter()
   addButton:boolean=true
-  amount:number=1
+  amount:any=1
 
   constructor() { }
   ngOnInit(): void {
@@ -19,14 +19,19 @@ export class CardComponentComponent implements OnInit {
 add()
 {
   if(this.amount<1){
-    
+
     this.amount=1
     this.item.emit({item:this.data,quantity:this.amount})
   }
+ else if( this.amount==='')
+ {
+   alert("enter quantity")
+ }
   else
   {
     this.item.emit({item:this.data,quantity:this.amount})
   }
+
 }
 
 }
